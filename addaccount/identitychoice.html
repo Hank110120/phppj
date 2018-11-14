@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<script language="JavaScript">
+	function act1() {
+		document.choiceForm.action = "./bossadd.php";
+		document.choiceForm.submit();
+
+	}
+	function act2() {
+		document.choiceForm.action = "./teacherlicense.php";
+		document.choiceForm.submit();
+
+	}
+	function act3() {
+		document.choiceForm.action = "./childadd.php";
+		document.choiceForm.submit();
+
+	}
+	function act4() {
+		document.choiceForm.action = "./classadd.php";
+		document.choiceForm.submit();
+
+	}
+	function act5() {
+		document.choiceForm.action = "./boardadd.php";
+		document.choiceForm.submit();
+
+	}
+	function act6() {
+		document.choiceForm.action = "./teacherinfoadd.php";
+		document.choiceForm.submit();
+
+	}
+	function act7() {
+		document.choiceForm.action = "../transcript/transcript.php";
+		document.choiceForm.submit();
+
+	}
+	function act8() {
+		document.choiceForm.action = "./Carousel.php";
+		document.choiceForm.submit();
+
+	}
+	function act9() {
+		document.choiceForm.action = "../transcript/transcriptadd.php";
+		document.choiceForm.submit();
+
+	}
+	function act10() {
+		document.choiceForm.action = "../contactbook/contactbook.php";
+		document.choiceForm.submit();
+
+	}
+</script>
+
+<body>
+	<!-- <form method="POST"  action="bossadd.php">
+    	<img src="../IMAGES/normal_1295.png" alt="">
+    	<button name="identity" type="submit" value="B">我是老闆</button>
+	</form>
+	<form method="POST"  action="teacherlicense.php">
+    	<img src="../IMAGES/normal_3206.png" alt="">
+    	<button name="identity" type="submit" value="T">我是老師</button>
+	</form> -->
+	<!-- <form method="post" action="">
+		<button type="button"><img src="../IMAGES/normal_1295.png" onclick="location.href='./bossadd.php'">
+			<p>我是老闆</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_3206.png" onclick="location.href='./teacherlicense.php'">
+			<p>我是老師</p>
+		</button>
+		<button name="chidentity" value="P" type="button"><img src="../IMAGES/normal_725.png" onclick="location.href='./childadd.php'">
+			<p>我是學生</p>
+		</button>
+	</form> -->
+
+	<form name="choiceForm" method="post" action="">
+		<button type="button"><img src="../IMAGES/normal_1295.png" onclick="act1();">
+			<p>我是老闆</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_3206.png" onclick="act2();">
+			<p>我是老師</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_485.png" onclick="act3();">
+			<p>我是學生</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_725.png" onclick="act4();">
+			<p>新增教室</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_840.png" onclick="act5();">
+			<p>新增佈告欄</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_234.png" onclick="act6();">
+			<p>新增師資介紹</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_3810.png" onclick="act7();">
+			<p>成績單</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_511.png" onclick="act8();">
+			<p>輪播圖修改</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_5176.png" onclick="act9();">
+			<p>新增學生成績</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_3206.png" onclick="act10();">
+			<p>聯絡本</p>
+		</button>
+		<!-- <input type="button" name="Button" value="Act1" onClick="act1();">
+		<input type="button" name="Submit2" value="Act2" onClick="act2();"> -->
+	</form>
+
+</body>
+
+</html>

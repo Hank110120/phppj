@@ -1,0 +1,57 @@
+.bg{
+	position: fixed;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -999;
+}
+
+
+.form-group{
+	margin: 0px auto;
+	width: 500px;
+	font-size: 28px;
+	color: rgb(255, 255, 255);
+	font-family: 'Hi Melody', cursive;
+	/*box-shadow: 1px 1px 1px rgba(20%,20%,40%,0.5);*/
+
+	
+}
+.font{
+	font-size: 50px;
+	color: rgb(252, 208, 208);
+	font-family: 'Hi Melody', cursive;
+}
+.cen{
+	display: flex;
+	justify-content: center;
+	
+	color: white;
+}
+.label input{
+	font:14px white;
+}
+/*.checkbox button{
+	position: relative;
+	float: right;
+	display: block;
+
+}*/
+
+.fileUpload {   
+    position: relative;   
+    overflow: hidden;   
+    margin: 10px;   
+}   
+.fileUpload input.upload {   
+    position: absolute;   
+    top: 0;   
+    right: 0;   
+    margin: 0;   
+    padding: 0;   
+    font-size: 20px;   
+    cursor: pointer;   
+    opacity: 0;   
+    filter: alpha(opacity=0);   
+}  

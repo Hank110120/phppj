@@ -1,0 +1,13 @@
+{
+    "name": "hank1/rebuild",
+    "authors": [
+        {
+            "name": "Hank Wang",
+            "email": "Hank110120@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^5.7",
+        "illuminate/events": "^5.7"
+    }
+}
