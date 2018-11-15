@@ -87,7 +87,7 @@ if($_SESSION["name"] == null){
             <label for="C_CN">Company</label>
             <select class="form-control" name="C_CN" id="C_CN" style="font-size:24px;height:50px;" v-model="selectedClass">
                 <!-- <option v&#45;for="value in classes">{{ value }}</option> -->
-                <option v-for="groupedClass in Object.keys(groupedClasses)">{{ groupedClass }}</option>
+                <option v-for="groupedClass in groupedClasses">{{ groupedClass }}</option>
             </select>
   </div>
   <div class="form-group">
@@ -136,7 +136,9 @@ if($_SESSION["name"] == null){
 </body>
 <script>
 var Company = <?php echo json_encode($Company->toArray()); ?>;
-var groupedClasses = _.groupBy(Company, 'C_CN');
+var groupedClasses = Company.map(item =>{
+  return item['C_CN'] + '-' + item['C_Id'];
+});
 var vue = new Vue({
     el: '#app',
     data: {
@@ -145,7 +147,6 @@ var vue = new Vue({
         selectedClass: null,
         selectedStudent: null
     },
-
 });
 </script>
 <script src="../JS/jquery-3.3.1.min.js"></script>
