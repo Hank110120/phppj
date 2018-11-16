@@ -17,7 +17,7 @@ session_start();
   <img src="../file/background/bossadd.jpg" class="img-responsive" alt="Responsive image" width="100%\9;" style="filter:brightness(0.9);">
   </div>
 
-<form method="POST"  action="../fileuplo/upload-file/upload.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
+<form method="POST"  action="../fileuplo/upload-file/bossaddupload.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
 <div class="font" align="center">Boss Add</div>
   <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">
