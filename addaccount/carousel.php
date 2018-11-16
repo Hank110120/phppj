@@ -6,7 +6,7 @@ if($_SESSION["name"] == null){
 }
 ?>
 <html>
-<link rel="stylesheet" type="text/css" href="../CSS/boardadd.css">
+<link rel="stylesheet" type="text/css" href="../CSS/carousel.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../resource/bootstrap-4.1.1-dist/css/bootstrap.min.css">
 <link href="../resource/bootstrap-4.1.1-dist/fonts/css.css" rel="stylesheet">
@@ -21,7 +21,7 @@ if($_SESSION["name"] == null){
   <img src="../file/background/carousel.jpg" class="img-responsive" alt="Responsive image" width="100%\9;">
   </div>
 
-<form method="POST"  action="Carouseljoin.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
+<form method="POST"  action="../fileuplo/upload-file/caruselupload.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
 <div class="font" align="center">Carousel Add</div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">
@@ -83,47 +83,72 @@ if($_SESSION["name"] == null){
     </div>
 </nav>
 
-<div class="form-group" id="app">
+<!-- <div class="form-group" id="app">
             <label for="C_CN">Company</label>
-            <select class="form-control" name="C_CN" id="C_CN" style="font-size:24px;height:50px;" v-model="selectedClass">
+            <select class="form-control" name="C_CN" id="C_CN" style="font-size:24px;height:50px;" v-model="selectedClass"> -->
                 <!-- <option v&#45;for="value in classes">{{ value }}</option> -->
-                <option v-for="groupedClass in Object.keys(groupedClasses)">{{ groupedClass }}</option>
+                <!-- <option v-for="groupedClass in Object.keys(groupedClasses)">{{ groupedClass }}</option>
             </select>
+  </div> -->
+  <div class="form-group">
+    <!-- <label for="fileToUpload">Head shot</label> -->
+    <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
+    <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
+
+    <input id="fileToUpload1" placeholder="Slide 1" readonly style="border-radius:10px;">
+    <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
+        <span>Choose File</span>
+        <input id="uploadBtn1" type="file" class="upload" name="uploadBtn1">
+    </div>
+    <!-- </label> -->
   </div>
   <div class="form-group">
-    <label for="Slide_1">Slide 1</label>
-    <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;">
-    <input id="Slide_1" style="display:none;" type="file" name="Slide_1">
-    Choice File
-    </label>
+    <!-- <label for="fileToUpload">Head shot</label> -->
+    <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
+    <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
+
+    <input id="fileToUpload2" placeholder="Slide 2" readonly style="border-radius:10px;">
+    <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
+        <span>Choose File</span>
+        <input id="uploadBtn2" type="file" class="upload" name="uploadBtn2">
+    </div>
+    <!-- </label> -->
   </div>
   <div class="form-group">
-    <label for="Slide_2">Slide 2</label>
-    <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;">
-    <input id="Slide_2" style="display:none;" type="file" name="Slide_2">
-    Choice File
-    </label>
+    <!-- <label for="fileToUpload">Head shot</label> -->
+    <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
+    <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
+
+    <input id="fileToUpload3" placeholder="Slide 3" readonly style="border-radius:10px;">
+    <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
+        <span>Choose File</span>
+        <input id="uploadBtn3" type="file" class="upload" name="uploadBtn3">
+    </div>
+    <!-- </label> -->
   </div>
   <div class="form-group">
-    <label for="Slide_3">Slide 3</label>
-    <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;">
-    <input id="Slide_3" style="display:none;" type="file" name="Slide_3">
-    Choice File
-    </label>
+    <!-- <label for="fileToUpload">Head shot</label> -->
+    <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
+    <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
+
+    <input id="fileToUpload4" placeholder="Slide 4" readonly style="border-radius:10px;">
+    <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
+        <span>Choose File</span>
+        <input id="uploadBtn4" type="file" class="upload" name="uploadBtn4">
+    </div>
+    <!-- </label> -->
   </div>
   <div class="form-group">
-    <label for="Slide_4">Slide 4</label>
-    <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;">
-    <input id="Slide_4" style="display:none;" type="file" name="Slide_4">
-    Choice File
-    </label>
-  </div>
-  <div class="form-group">
-    <label for="Slide_5">Slide 5</label>
-    <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;">
-    <input id="Slide_5" style="display:none;" type="file" name="Slide_5">
-    Choice File
-    </label>
+    <!-- <label for="fileToUpload">Head shot</label> -->
+    <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
+    <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
+
+    <input id="fileToUpload5" placeholder="Slide 5" readonly style="border-radius:10px;">
+    <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
+        <span>Choose File</span>
+        <input id="uploadBtn5" type="file" class="upload" name="uploadBtn5">
+    </div>
+    <!-- </label> -->
   </div>
   <div class="cen" >
       <div class="submitBtn">
@@ -134,6 +159,23 @@ if($_SESSION["name"] == null){
 
 </form>
 </body>
+<script>
+document.getElementById("uploadBtn1").onchange = function () {
+  document.getElementById("fileToUpload1").value = this.value;
+};
+document.getElementById("uploadBtn2").onchange = function () {
+  document.getElementById("fileToUpload2").value = this.value;
+};
+document.getElementById("uploadBtn3").onchange = function () {
+  document.getElementById("fileToUpload3").value = this.value;
+};
+document.getElementById("uploadBtn4").onchange = function () {
+  document.getElementById("fileToUpload4").value = this.value;
+};
+document.getElementById("uploadBtn5").onchange = function () {
+  document.getElementById("fileToUpload5").value = this.value;
+};
+</script>
 <script>
 var Company = <?php echo json_encode($Company->toArray()); ?>;
 var groupedClasses = _.groupBy(Company, 'C_CN');
