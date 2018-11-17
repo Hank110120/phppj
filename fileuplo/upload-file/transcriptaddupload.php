@@ -22,9 +22,8 @@ $Registered_success = "false";
 // ------------教室--------------
 
 
+if ($_POST["uploadchoice"] == 0) {
 
-if ($_POST["F_Subject"] == 0) {
-    
 $targetDir = "../../file/csv/";
 $targetFile = $targetDir . basename($_FILES["uploadBtn"]["name"]);
 $targetFile1 = $targetDir . basename('transcript.csv');

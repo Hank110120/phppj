@@ -84,6 +84,13 @@ if($_SESSION["name"] == null){
     </div>
 </nav>
   <div class="form-group">
+      <label for="uploadchoice">Upload Choice</label>
+      <select class="form-control" style="font-size:24px;height:50px;margin:5px;" name="uploadchoice" id="uploadchoice">
+      <option value="0">大量上傳</option>
+      <option value="1">逐筆輸入</option>
+      </select>
+  </div>
+  <div class="form-group">
       <label for="UA_Acu">Class Number</label>
       <input type="text" class="form-control" name="UA_Acu" id="UA_Acu" readonly="readonly" value="<?php echo $_SESSION["name"];?>" style="font-size:24px">
   </div>
@@ -114,22 +121,40 @@ if($_SESSION["name"] == null){
       <label for="UA_Psw">Password</label>
       <input type="text" class="form-control" id="UA_Psw" name="UA_Psw" value="<?php echo "P$UA_VC"; ?>" style="font-size:24px">
   </div>
-   <div class="cen" >
+  <div class="form-group">
+    <!-- <label for="fileToUpload">Head shot</label> -->
+    <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
+    <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
+
+    <input id="fileToUpload" placeholder="批次上傳" readonly style="border-radius:10px;">
+    <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
+        <span>Choose File</span>
+        <input id="uploadBtn" type="file" class="upload" name="uploadBtn">
+    </div>
+    <!-- </label> -->
+    
+  </div>
+  <div class="cen" >
       <div class="submitBtn">
         <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">Submit</button>
-      </div>
   </div>
+
 
 
 </form>
 </body>
+<script>
+document.getElementById("uploadBtn").onchange = function () {
+  document.getElementById("fileToUpload").value = this.value;
+};
+</script>
 <script>
 var Classroom = <?php echo json_encode($Classroom->toArray()); ?>;
 var groupedClasses = _.groupBy(Classroom, 'Cr_Name');
 var vue = new Vue({
     el: '#app',
     data: {
-        classes: ['class A', 'class B', 'class C'],
+        // classes: ['class A', 'class B', 'class C'],
         groupedClasses: groupedClasses,
         selectedClass: null,
         selectedStudent: null
