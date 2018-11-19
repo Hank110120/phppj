@@ -1,7 +1,7 @@
 <?php
-// include '../transcript/boardselect.php';
+session_start();
 if($_SESSION["name"] == null){
-  header("location:../login.php"); 
+  header("location:../../../login.php"); 
 }
 ?>
 <html>
@@ -83,7 +83,7 @@ if($_SESSION["name"] == null){
     </div>
 </nav>
 <?php
-session_start();
+
 //The first question:empty_input
 //The second question:password_error
 //The third question:"The_Account_has_been_registered"
