@@ -33,11 +33,11 @@ if($_SESSION["name"] == null){
 
 </head>
 
-<body>
+<body style="overflow:auto;">
 
   <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">
-      <img src="../IMAGES/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="../file/logo/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
       <?php include '../SQL/datause.php';?>
       <?php 
       echo $result["C_CN"];
@@ -86,6 +86,7 @@ if($_SESSION["name"] == null){
           // echo"<center><font color='blue';font size='8'>";
           echo $result["UA_Name"] . "\n你好";
           // echo "</font>";
+          
           ?>
         </a>
         <a class="nav-item nav-link navpage" href="../logout.php"><span class="glyphicon glyphicon-log-in"></span>
@@ -96,7 +97,7 @@ if($_SESSION["name"] == null){
   </nav>
 
   <div class="container">
-    <div id="accordion" style="position: relative;top: 60px;">
+    <div id="accordion" style="position: relative;top: 60px;" >
       <div class="">
         <div class="card-header" id="headingOne" style="border-bottom:1px white;">
           <h5 class="mb-0">
@@ -148,32 +149,30 @@ if($_SESSION["name"] == null){
           <div class="card-body">
             <div class="flexbox">
               <div class="item">
-                <section class="avenue-messenger">
-                  <div class="menu">
-                    <div class="items"><span>
-                        <a href="#" title="Minimize">&mdash;</a><br>
-                        <a href="#" title="End Chat">&#10005;</a>
+                <?php include '../config.php';?>
+                <?php
+                $servername = '220.135.97.54:3307';
+                $username = 'root';
+                $password = 'jacky110120';
+                $database = 'team3';
 
-                      </span></div>
-                  </div>
-                  <div class="agent-face">
-                    <div class="half">
-                      <!-- <img class="agent circle" src="" alt="Jesse Tino" style="position: relative;top: 250px;left: 15px;"> -->
-                      <!-- <div class="agent circle" style="position: relative;top: 232px;left: 150px;"></div> -->
-                    </div>
-                  </div>
-                  <div class="chat">
-                    <div class="chat-title">
-                      <h1>Jesse Tino</h1>
-                    </div>
-                    <div class="messages" style="height: 300px;">
-                      <div class="messages-content"></div>
-                    </div>
-                    <div class="message-box">
-                      <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-                      <button type="submit" class="message-submit">Send</button>
-                    </div>
-                  </div>
+                $Registered_success = "false";
+
+                error_reporting(0);
+                $name = $_POST[bname];
+                $news = $_POST[bnews];
+
+                $bd = mysqli_connect($servername, $username, $password, $database);
+                $sql = "select UA_VC from UserAccount where UA_Name = '$result[UA_Name]'";
+                $rows = mysqli_query($bd, $sql);
+                $result = mysqli_fetch_assoc($rows);
+                $UA_VC = $result['UA_VC'];
+                $sql1 = "insert into bt1(no,mess_vc,name,news)values(null,'$UA_VC','$name','$news')";
+                $rows1 = mysqli_query($bd, $sql1);
+                include "b_index.php";
+                ?>
+
+
               </div>
             </div>
           </div>

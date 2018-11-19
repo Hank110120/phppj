@@ -27,7 +27,7 @@ if (!$bd) {
 }
 
 	// 是否有查詢到使用者記錄
-    $sql  = "SELECT * FROM contactbook WHERE CB_SId = (SELECT UA_PC FROM UserAccount WHERE UA_ACU = '$UA_Acu')";
+    $sql  = "SELECT * FROM ContactBook WHERE CB_SId = (SELECT UA_CVC FROM UserAccount WHERE UA_ACU = '$UA_Acu')";
     $rows = mysqli_query($bd, $sql);
     $result = mysqli_fetch_assoc($rows);
 
