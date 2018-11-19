@@ -1,0 +1,13 @@
+{
+    "name": "yushing/tutor",
+    "authors": [
+        {
+            "name": "昱行",
+            "email": "laiyushing@unisharp.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^5.7",
+        "illuminate/events": "^5.7"
+    }
+}
