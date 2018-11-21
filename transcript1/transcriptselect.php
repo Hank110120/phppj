@@ -8,22 +8,27 @@ $database   = 'team3';
 $Registered_success = "false";
 
 
-
+if (isset($_SESSION["name"])) {
+    $UA_Acu = $_SESSION["name"];
+    echo $UA_Acu . ",";
+} else {
+    echo "no_UA_Acu" . ",";
+}
 
 $bd = mysqli_connect($servername, $username, $password, $database);
 if (!$bd) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$UA_Acu = $_SESSION['name'];
 
-$sql  = "Select SC_SN From StudentClass";
+
+$sql  = "SELECT * FROM Student WHERE S_Phone = (SELECT UA_Phone FROM UserAccount WHERE UA_Acu = '$UA_Acu')";
 $rows = mysqli_query($bd, $sql);
+$result = mysqli_fetch_assoc($rows);
 
 
 
-$sql1  = "Select SC_CN From StudentClass where SC_SN = $SC_SN";
-$rows1 = mysqli_query($bd, $sql1);
+
 
 
 

@@ -21,7 +21,7 @@ if($_SESSION["name"] == null){
   <img src="../file/background/boardadd.jpg" class="img-responsive" alt="Responsive image" width="100%\9;">
   </div>
 
-<form method="POST"  action="boardjoin.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
+<form method="POST"  action="" enctype="multipart/form-data" style="position: relative;top: 60px;">
 <div class="font" align="center">Board add</div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">
@@ -46,7 +46,7 @@ if($_SESSION["name"] == null){
 			echo '<a class="nav-item nav-link navpage" href="../index.php">首頁</a>';
 			// echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
 			// echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-			echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
+			echo '<a class="nav-item nav-link navpage" href="../addaccount/teachercontact.php">聯絡簿</a>';
 			echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
 			echo '<a class="nav-item nav-link navpage" href="../addaccount/maintain.php">系統維護</a>';
 			// echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';
@@ -54,7 +54,7 @@ if($_SESSION["name"] == null){
 			echo '<a class="nav-item nav-link navpage" href="../index.php">首頁</a>';
 			// echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
 			// echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-			echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
+			echo '<a class="nav-item nav-link navpage" href="../addaccount/teachercontact.php">聯絡簿</a>';
 			echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
 			echo '<a class="nav-item nav-link navpage" href="../addaccount/maintain.php">系統維護</a>';
 			// echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';

@@ -1,14 +1,14 @@
 <?php
-include '../transcript/boardselect.php';
+session_start();
 if($_SESSION["name"] == null){
-  header("location:../login.php"); 
+  header("location:../../../login.php"); 
 }
 ?>
 <html>
     <head>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="../CSS/boardadd.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/teachercontact.css">
         <link rel="stylesheet" href="../resource/bootstrap-4.1.1-dist/css/bootstrap.min.css">
         <link href="../resource/bootstrap-4.1.1-dist/fonts/css.css" rel="stylesheet">
     </head>
@@ -21,7 +21,7 @@ if($_SESSION["name"] == null){
   <img src="../file/background/boardadd.jpg" class="img-responsive" alt="Responsive image" width="100%\9;">
   </div>
 
-<form method="POST"  action="boardjoin.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
+<form method="POST"  action="" enctype="multipart/form-data" style="position: relative;top: 60px;">
 <div class="font" align="center">Board add</div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">
@@ -82,74 +82,86 @@ if($_SESSION["name"] == null){
       </div>
     </div>
 </nav>
+<?php
 
-  
-  <!-- <div class="form-group">
-    <label for="BB_CId">Company Name</label>
-    <input type="text" class="form-control" id="BB_CId" name="BB_CId" style="font-size:24px">
-  </div> -->
-  <div class="form-group" id="app">
-    <label for="BB_SN">Page Name</label>
-      <select class="form-control" name="Cr_Name" id="Cr_Name" style="font-size:24px;height:50px;" v-model="selectedClass">
-          <!-- <option v&#45;for="value in classes">{{ value }}</option> -->
-          <option v-for="groupedClass in Object.keys(groupedClasses)">{{ groupedClass }}</option>
-      </select>
+//The first question:empty_input
+//The second question:password_error
+//The third question:"The_Account_has_been_registered"
+//The fourth question:The_Email_has_been_registered
+$servername = '220.135.97.54:3307';
+$username   = 'root';
+$password   = 'jacky110120';
+$database   = 'team3';
+
+$Registered_success = "false";
+
+// ------------學生--------------
+// ------------學生--------------
+// ------------學生--------------
+
+
+
+echo "{";
+echo "\"SC_CN\":";
+if (isset($_POST["SC_CN"])) {
+    $SC_CN = $_POST["SC_CN"];
+    echo $SC_CN . ",";
+} else {
+    echo "no_SC_CN" . ",";
+}
+echo "\"SC_SN\":";
+if (isset($_POST["SC_SN"])) {
+    $SC_SN = $_POST["SC_SN"];
+    echo $SC_SN . ",";
+} else {
+    echo "no_SC_SN" . ",";
+}
+echo "\"news\":";
+if (isset($_POST["news"])) {
+    $news = $_POST["news"];
+    echo $news . ",";
+} else {
+    echo "no_news" . ",";
+}
+
+
+
+
+// --------------------------------------------------------
+// --------------------------------------------------------
+
+
+// --------------------------------------------------------
+// --------------------------------------------------------
+$bd = mysqli_connect($servername, $username, $password, $database);
+if (!$bd) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+
+// --------------------------------------------------------
+// --------------------------------------------------------
+
+$sql = "select SC_CI from StudentClass where SC_CN = '$SC_CN'";
+$rows = mysqli_query($bd, $sql);
+$result = mysqli_fetch_assoc($rows);
+$SC_CI = $result['SC_CI'];
+
+$sql1 = "SELECT UA_VC FROM UserAccount WHERE UA_Phone = (SELECT S_Phone FROM Student WHERE S_Name = '$SC_SN')";
+$rows1 = mysqli_query($bd, $sql1);
+$result1 = mysqli_fetch_assoc($rows1);
+$UA_VC = $result1['UA_VC'];
+// $num1  = mysqli_num_rows($rows1);
+// var_dump($UA_Acu);
+// var_dump($sql1);
+// die;
+$sql = "insert into bt1 (mess_CrId, mess_vc, name, news) values ('$SC_CI', '$UA_VC', '$SC_CN', '$news')";
+$rows = mysqli_query($bd, $sql);
+
     
-  </div>
-  <div class="form-group">
-    <label for="page">分頁</label>
-    <select class="form-control" style="font-size:24px;height:50px;margin:5px;" name="page" id="page">
-      <option value="1">第一分頁</option>
-      <option value="2">第二分頁</option>
-      <option value="3">第三分頁</option>
-      <option value="4">第四分頁</option>
-      <option value="5">第五分頁</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="option">則數</label>
-    <select class="form-control" style="font-size:24px;height:50px;margin:5px;" name="option" id="option">
-      <option value="1">第一則</option>
-      <option value="2">第二則</option>
-      <option value="3">第三則</option>
-      <option value="4">第四則</option>
-      <option value="5">第五則</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" name="title" style="font-size:24px">
-
-  </div>
-
-  <div class="form-group">
-    <label for="detail">Detail</label>
-    <textarea name="detail" id="detail" class="form-control" id="exampleFormControlTextarea1" rows="5" required></textarea>
-  </div>
-  <div class="cen" >
-      <div class="submitBtn">
-        <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">Submit</button>
-      </div>
-  </div>
 
 
-</form>
-</body>
-<script>
-var Classroom = <?php echo json_encode($Classroom->toArray()); ?>;
-var groupedClasses = _.groupBy(Classroom, 'Cr_Name');
-var vue = new Vue({
-    el: '#app',
-    data: {
-        classes: ['class A', 'class B', 'class C'],
-        groupedClasses: groupedClasses,
-        selectedClass: null,
-        selectedStudent: null
-    },
+echo "}";
 
-});
-    </script>
-    <script src="../JS/jquery-3.3.1.min.js"></script>
-<script src="../resource/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
-<script src="../JS/allbutton.js"></script>
-</html>
+
+

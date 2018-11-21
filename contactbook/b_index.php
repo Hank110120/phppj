@@ -5,7 +5,7 @@ session_start();
 <html>
 <head><title>留言板</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="../CSS/style.css">
+<!-- <link rel="stylesheet" href="../CSS/style.css"> -->
 </head>
 <body>
 

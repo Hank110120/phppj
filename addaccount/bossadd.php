@@ -98,12 +98,7 @@ session_start();
     </div>
     </label>
   </div>
-  <div class="cen" >
-      <div class="submitBtn">
-        <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">Submit</button>
-
-      </div>
-  </div>
+  
 </form>
 <script>
 document.getElementById("uploadBtn").onchange = function () {

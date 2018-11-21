@@ -51,7 +51,7 @@ if($_SESSION["name"] == null){
               // echo '<a class="nav-item nav-link navpage" href="#">首頁</a>';
               echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
               echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-              echo '<a class="nav-item nav-link navpage" href="./contactbook/contactbook.php">聯絡簿</a>';
+              echo '<a class="nav-item nav-link navpage" href="./addaccount/teachercontact.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="./transcript/transcript.php">成績單</a>';
               echo '<a class="nav-item nav-link navpage" href="./addaccount/maintain.php">系統維護</a>';
               echo '<a class="nav-item nav-link navpage" href="#contextus">聯絡我們</a>';
@@ -59,7 +59,7 @@ if($_SESSION["name"] == null){
               // echo '<a class="nav-item nav-link navpage" href="#">首頁</a>';
               echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
               echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-              echo '<a class="nav-item nav-link navpage" href="./contactbook/contactbook.php">聯絡簿</a>';
+              echo '<a class="nav-item nav-link navpage" href="./addaccount/teachercontact.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="./transcript/transcript.php">成績單</a>';
               echo '<a class="nav-item nav-link navpage" href="./addaccount/maintain.php">系統維護</a>';
               echo '<a class="nav-item nav-link navpage" href="#contextus">聯絡我們</a>';

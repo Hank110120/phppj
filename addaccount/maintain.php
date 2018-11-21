@@ -16,7 +16,11 @@ if($_SESSION["name"] == null){
 </head>
 
 <script language="JavaScript">
+	function act1() {
+		document.choiceForm.action = "../addaccount/teachercontact.php";
+		document.choiceForm.submit();
 
+	}
 	function act2() {
 		document.choiceForm.action = "../addaccount/company.php";
 		document.choiceForm.submit();
@@ -90,7 +94,7 @@ if($_SESSION["name"] == null){
 					echo '<a class="nav-item nav-link navpage" href="../index.php">首頁</a>';
 					// echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
 					// echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-					echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
+					echo '<a class="nav-item nav-link navpage" href="../addaccount/teachercontact.php">聯絡簿</a>';
 					echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
 					// echo '<a class="nav-item nav-link navpage" href="../addaccount/maintain.html">系統維護</a>';
 					// echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';
@@ -98,7 +102,7 @@ if($_SESSION["name"] == null){
 					echo '<a class="nav-item nav-link navpage" href="../index.php">首頁</a>';
 					// echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
 					// echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-					echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
+					echo '<a class="nav-item nav-link navpage" href="../addaccount/teachercontact.php">聯絡簿</a>';
 					echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
 					// echo '<a class="nav-item nav-link navpage" href="../addaccount/maintain.html">系統維護</a>';
 					// echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';

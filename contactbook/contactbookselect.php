@@ -31,7 +31,7 @@ if (!$bd) {
     $rows = mysqli_query($bd, $sql);
     $result = mysqli_fetch_assoc($rows);
 
-    
+
     // var_dump($result['UA_Name']);
     // die;
 	

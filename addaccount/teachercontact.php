@@ -1,31 +1,24 @@
 <?php
-include '../transcript/teacherinfoselect.php';
-// session_start();
-if($_SESSION["name"] == null){
-  header("location:../login.php"); 
-}
+session_start();
+
 ?>
 <html>
-<link rel="stylesheet" type="text/css" href="../CSS/teacherinfoadd.css">
+<link rel="stylesheet" type="text/css" href="../CSS/teachercontact.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../resource/bootstrap-4.1.1-dist/css/bootstrap.min.css">
 <link href="../resource/bootstrap-4.1.1-dist/fonts/css.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
 <body>
-
 
 <!-- ---------- -->
 
 <!-- ---------- -->
 <div class="bg" >
 
-  <img src="../file/background/teacherinfoadd.jpg" class="img-responsive" alt="Responsive image" width="100%\9;">
+  <img src="../file/background/teachercontactselect.jpg" class="img-responsive" alt="Responsive image" width="100%\9;" style="filter:brightness(0.9);">
   </div>
-
-<form method="POST"  action="teacherinfojoin.php" enctype="multipart/form-data" style="position: relative;top: 60px;">
-<div class="font" align="center">Teacher Info Add</div>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <form name="choiceForm" method="post" action="" style="position: relative;top: 60px;">
+<div class="font" align="center">Character Choice</div>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <a class="navbar-brand mb-0 h1" href="#">
       <img src="../file/logo/logo.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
       <?php include '../SQL/datause.php';?>
@@ -48,7 +41,7 @@ if($_SESSION["name"] == null){
               echo '<a class="nav-item nav-link navpage" href="../index.php">首頁</a>';
               // echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
               // echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-              echo '<a class="nav-item nav-link navpage" href="../addaccount/teachercontact.php">聯絡簿</a>';
+              // echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
               echo '<a class="nav-item nav-link navpage" href="../addaccount/maintain.php">系統維護</a>';
               // echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';
@@ -56,7 +49,7 @@ if($_SESSION["name"] == null){
               echo '<a class="nav-item nav-link navpage" href="../index.php">首頁</a>';
               // echo '<a class="nav-item nav-link navpage" href="#accordion">師資介紹</a>';
               // echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
-              echo '<a class="nav-item nav-link navpage" href="../addaccount/teachercontact.php">聯絡簿</a>';
+              // echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
               echo '<a class="nav-item nav-link navpage" href="../addaccount/maintain.php">系統維護</a>';
               // echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';
@@ -72,11 +65,11 @@ if($_SESSION["name"] == null){
         ?>
         <a class="nav-item nav-link navpage" href="#"><span class="glyphicon glyphicon-user"></span>
 
-        <?php
+		      <?php
           // echo"<center><font color='blue';font size='8'>";
           echo $result["UA_Name"] . "\n你好";
           // echo "</font>";
-        ?>
+          ?>
         </a>
         <a class="nav-item nav-link navpage" href="../logout.php"><span class="glyphicon glyphicon-log-in"></span>
           Logout</a>
@@ -84,55 +77,56 @@ if($_SESSION["name"] == null){
       </div>
     </div>
 </nav>
-  <div class="form-group">
-    <label for="option">順位</label>
-    <select class="form-control" style="font-size:24px;height:50px;margin:5px;" name="option" id="option">
-      <option value="1">第一順位</option>
-      <option value="2">第二順位</option>
-      <option value="3">第三順位</option>
-      <option value="4">第四順位</option>
-      <option value="5">第五順位</option>
-      <option value="5">第六順位</option>
-      <option value="5">第七順位</option>
-      <option value="5">第八順位</option>
-      <option value="5">第九順位</option>
-      <option value="5">第十順位</option>
-    </select>
-  </div>
-  <div class="form-group" id="app">
-    <label for="TP_Name">Teacher Name</label>
-      <select class="form-control" name="TP_Name" id="TP_Name" style="font-size:24px;height:50px;" v-model="selectedClass">
-          <!-- <option v&#45;for="value in classes">{{ value }}</option> -->
-        <option v-for="groupedClass in Object.keys(groupedClasses)">{{ groupedClass }}</option>
-      </select>
-  </div>
-  <div class="form-group">
-    <label for="TP_TI">Teacher Info</label>
-    <!-- <input type="text" class="form-control" id="identity" name="identity" style="font-size:24px"> -->
-    <textarea type="text" class="form-control" id="TP_TI" name="TP_TI" rows="5" required style="font-size:24px"></textarea>
-  </div>
-  </div>
-  <div class="cen" >
-      <div class="submitBtn">
-        <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">Submit</button>
+	<!-- <form method="POST"  action="bossadd.php">
+    	<img src="../IMAGES/normal_1295.png" alt="">
+    	<button name="identity" type="submit" value="B">我是老闆</button>
+	</form>
+	<form method="POST"  action="teacherlicense.php">
+    	<img src="../IMAGES/normal_3206.png" alt="">
+    	<button name="identity" type="submit" value="T">我是老師</button>
+	</form> -->
+	<!-- <form method="post" action="">
+		<button type="button"><img src="../IMAGES/normal_1295.png" onclick="location.href='./bossadd.php'">
+			<p>我是老闆</p>
+		</button>
+		<button type="button"><img src="../IMAGES/normal_3206.png" onclick="location.href='./teacherlicense.php'">
+			<p>我是老師</p>
+		</button>
+		<button name="chidentity" value="P" type="button"><img src="../IMAGES/normal_725.png" onclick="location.href='./childadd.php'">
+			<p>我是學生</p>
+		</button>
+	</form> -->
 
-      </div>
-  </div>
-</form>
+	<div class="cen" >
+		<div class="submitBtn">
+			<button id="btn" onclick="act1();" type="submit" class="btn btn-default cen" style="margin:10px;font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">聯絡本</button>
+		</div>
+	</div>
+	<div class="cen" >
+		<div class="submitBtn">
+			<button id="btn1" onclick="act2();" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">留言板</button>
+		</div>
+	</div>
+		
+
+
+		<!-- <input type="button" name="Button" value="Act1" onClick="act1();">
+		<input type="button" name="Submit2" value="Act2" onClick="act2();"> -->
+	</form>
 
 </body>
-<script>
-var UserAccount = <?php echo json_encode($UserAccount->toArray()); ?>;
-var groupedClasses = _.groupBy(UserAccount, 'UA_Name');
-var vue = new Vue({
-    el: '#app',
-    data: {
-        classes: ['class A', 'class B', 'class C'],
-        groupedClasses: groupedClasses,
-        selectedClass: null,
-        selectedStudent: null
-    },
-});
+<script language="JavaScript">
+	function act1() {
+		document.choiceForm.action = "../contactbook/contactteacher.php";
+		document.choiceForm.submit();
+
+	}
+	function act2() {
+		document.choiceForm.action = "../contactbook/messageteacher.php";
+		document.choiceForm.submit();
+
+	}
+
 </script>
 <script src="../JS/jquery-3.3.1.min.js"></script>
 <script src="../resource/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
