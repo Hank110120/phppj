@@ -99,6 +99,7 @@ if($_SESSION["name"] == null){
   <div class="form-group">
     <label for="page">分頁</label>
     <select class="form-control" style="font-size:24px;height:50px;margin:5px;" name="page" id="page">
+      <option value="0"></option>
       <option value="1">第一分頁</option>
       <option value="2">第二分頁</option>
       <option value="3">第三分頁</option>
@@ -109,6 +110,7 @@ if($_SESSION["name"] == null){
   <div class="form-group">
     <label for="option">則數</label>
     <select class="form-control" style="font-size:24px;height:50px;margin:5px;" name="option" id="option">
+      <option value="0"></option>
       <option value="1">第一則</option>
       <option value="2">第二則</option>
       <option value="3">第三則</option>
@@ -116,11 +118,11 @@ if($_SESSION["name"] == null){
       <option value="5">第五則</option>
     </select>
   </div>
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" style="font-size:24px">
 
-  </div>
+  </div> -->
 
   <div class="form-group">
     <label for="detail">Detail</label>

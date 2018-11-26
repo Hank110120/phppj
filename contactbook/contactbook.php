@@ -1,7 +1,9 @@
 <?php
+
+session_start();
 include '../transcript/contactbookselect.php';
 if($_SESSION["name"] == null){
-  header("location:login.php"); 
+  header("location:../login.php"); 
 }
 ?>
 <html>
@@ -62,6 +64,7 @@ if($_SESSION["name"] == null){
               // echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
               // echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
+              echo '<a class="nav-item nav-link navpage" href="./addaccount/parentPw.php">密碼修改</a>';
               // echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';
             }
           }
@@ -96,10 +99,13 @@ if($_SESSION["name"] == null){
                 <option v-for="student in groupedStudends">{{ student }}</option>
             </select>
         </div>
+      
   </div>
   <div class="cen" >
       <div class="submitBtn">
-        <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">Submit</button>
+        <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">
+
+        Submit</button>
       </div>
   </div>
 
@@ -126,6 +132,7 @@ var vue = new Vue({
     }
 });
     </script>
+    
     <script src="../JS/jquery-3.3.1.min.js"></script>
     <script src="../resource/bootstrap-4.1.1-dist/js/bootstrap.min.js"></script>
     <script src="../JS/allbutton.js"></script>

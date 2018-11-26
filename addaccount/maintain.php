@@ -62,7 +62,7 @@ if($_SESSION["name"] == null){
 
 	}
 	function act10() {
-		document.choiceForm.action = "../contactbook/contactbook.php";
+		document.choiceForm.action = "../addaccount/parentPw.php";
 		document.choiceForm.submit();
 
 	}
@@ -207,6 +207,16 @@ if ($result) {
 							</div>
 						</div>
 						';
+			echo
+				'
+						<div class="cen">
+							<div class="submitBtn">
+								<button onclick="act10();" type="submit" class="btn btn-default cen" style="font-family: Hi Melody, cursive;background: rgba(170, 175, 175, 0.7);width:300px;font-size:32px;color:white;">
+									密碼修改
+								</button>
+							</div>
+						</div>
+						';			
 		} elseif ($UA_PL == '1') {
 			echo
 				'
@@ -268,6 +278,16 @@ if ($result) {
 							</div>
 						</div>
 						';
+			echo
+				'
+						<div class="cen">
+							<div class="submitBtn">
+								<button onclick="act10();" type="submit" class="btn btn-default cen" style="font-family: Hi Melody, cursive;background: rgba(170, 175, 175, 0.7);width:300px;font-size:32px;color:white;">
+									密碼修改
+								</button>
+							</div>
+						</div>
+						';						
 		}
 }
 ?>

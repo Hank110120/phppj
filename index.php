@@ -69,6 +69,7 @@ if($_SESSION["name"] == null){
               echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
               echo '<a class="nav-item nav-link navpage" href="./contactbook/contactbook.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="./transcript/transcript.php">成績單</a>';
+              echo '<a class="nav-item nav-link navpage" href="./addaccount/parentPw.php">密碼修改</a>';
               echo '<a class="nav-item nav-link navpage" href="#contextus">聯絡我們</a>';
             }
         }
@@ -126,9 +127,15 @@ if($_SESSION["name"] == null){
     <!-- 師資欄 -->
     <div>
       <img class="logo" src="./file/logo/logo.jpg" alt="">
-      <h2 class="slogan">全心全意的照顧</h2>
-      <h3 class="slogan">全心全意的照顧</h3>
-      <h4 class="slogan">全心全意的照顧</h4>
+      <!-- <h2 class="slogan">全心全意的照顧</h2> -->
+      <h3 class="slogan">
+      <?php include "config.php"?>
+      <?php 
+      $C_SL = $result11['C_SL'];
+      echo $C_SL;
+      ?>
+      </h3>
+      <!-- <h4 class="slogan">全心全意的照顧</h4> -->
     </div>
     <div class="panel-group" id="accordion" style="background:rgb(180, 255, 255, 0.4);">
       <div class="panel panel-default">
@@ -146,9 +153,20 @@ if($_SESSION["name"] == null){
                 <div class="card" style="width: 12rem;">
                   <img class="card-img-top" src="./file/teacherhead/1.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">一拳老師</h5>
-                    <p class="card-text">孩要作底去見德高員，生布立千結與是三了人我？確水最部了因樂能物，年發價：上下風，進神可！待全件天空；個告車的活活影新朋據作覺直角、公萬絕死，究讀過質夫性！有樓何部內的多建運全。發今它出然作，原科也我能孩打吸自次：一目子明，數復以麼像在水象鄉在這創出覺實友你導……病站從？同觀這量先深分最投上水求子響眼增量家走、自行照排外成？一孩家營能上品！爭解在從是，電音講賽報我，了全市強市念？在越許會黨馬頭？洲工拉節通並布是父益庭就者進戲。速行
-                      card's content.</p>
+                    <h5 class="card-title">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_Name = $result1['TP_Name'];
+                    echo $TP_Name;
+                    ?>
+                    </h5>
+                    <p class="card-text">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_TI = $result1['TP_TI'];
+                    echo $TP_TI;
+                    ?>
+                    </p>
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                         收起
@@ -161,9 +179,20 @@ if($_SESSION["name"] == null){
                 <div class="card" style="width: 12rem;">
                   <img class="card-img-top" src="./file/teacherhead/2.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">神眉老師</h5>
-                    <p class="card-text">孩要作底去見德高員，生布立千結與是三了人我？確水最部了因樂能物，年發價：上下風，進神可！待全件天空；個告車的活活影新朋據作覺直角、公萬絕死，究讀過質夫性！有樓何部內的多建運全。發今它出然作，原科也我能孩打吸自次：一目子明，數復以麼像在水象鄉在這創出覺實友你導……病站從？同觀這量先深分最投上水求子響眼增量家走、自行照排外成？一孩家營能上品！爭解在從是，電音講賽報我，了全市強市念？在越許會黨馬頭？洲工拉節通並布是父益庭就者進戲。速行
-                      card's content.</p>
+                    <h5 class="card-title">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_Name = $result2['TP_Name'];
+                    echo $TP_Name;
+                    ?>
+                    </h5>
+                    <p class="card-text">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_TI = $result2['TP_TI'];
+                    echo $TP_TI;
+                    ?>
+                    </p>
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                         收起
@@ -176,9 +205,20 @@ if($_SESSION["name"] == null){
                 <div class="card" style="width: 12rem;">
                   <img class="card-img-top" src="./file/teacherhead/3.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">謝老師</h5>
-                    <p class="card-text">孩要作底去見德高員，生布立千結與是三了人我？確水最部了因樂能物，年發價：上下風，進神可！待全件天空；個告車的活活影新朋據作覺直角、公萬絕死，究讀過質夫性！有樓何部內的多建運全。發今它出然作，原科也我能孩打吸自次：一目子明，數復以麼像在水象鄉在這創出覺實友你導……病站從？同觀這量先深分最投上水求子響眼增量家走、自行照排外成？一孩家營能上品！爭解在從是，電音講賽報我，了全市強市念？在越許會黨馬頭？洲工拉節通並布是父益庭就者進戲。速行
-                      card's content.</p>
+                    <h5 class="card-title">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_Name = $result3['TP_Name'];
+                    echo $TP_Name;
+                    ?>
+                    </h5>
+                    <p class="card-text">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_TI = $result3['TP_TI'];
+                    echo $TP_TI;
+                    ?>
+                    </p>
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                         收起
@@ -191,9 +231,20 @@ if($_SESSION["name"] == null){
                 <div class="card" style="width: 12rem;">
                   <img class="card-img-top" src="./file/teacherhead/4.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">大熊老師</h5>
-                    <p class="card-text">孩要作底去見德高員，生布立千結與是三了人我？確水最部了因樂能物，年發價：上下風，進神可！待全件天空；個告車的活活影新朋據作覺直角、公萬絕死，究讀過質夫性！有樓何部內的多建運全。發今它出然作，原科也我能孩打吸自次：一目子明，數復以麼像在水象鄉在這創出覺實友你導……病站從？同觀這量先深分最投上水求子響眼增量家走、自行照排外成？一孩家營能上品！爭解在從是，電音講賽報我，了全市強市念？在越許會黨馬頭？洲工拉節通並布是父益庭就者進戲。速行
-                      card's content.</p>
+                    <h5 class="card-title">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_Name = $result4['TP_Name'];
+                    echo $TP_Name;
+                    ?>
+                    </h5>
+                    <p class="card-text">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_TI = $result4['TP_TI'];
+                    echo $TP_TI;
+                    ?>
+                    </p>
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                         收起
@@ -206,9 +257,20 @@ if($_SESSION["name"] == null){
                 <div class="card" style="width: 12rem;">
                   <img class="card-img-top" src="./file/teacherhead/5.jpg" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title">鬼塚老師</h5>
-                    <p class="card-text">孩要作底去見德高員，生布立千結與是三了人我？確水最部了因樂能物，年發價：上下風，進神可！待全件天空；個告車的活活影新朋據作覺直角、公萬絕死，究讀過質夫性！有樓何部內的多建運全。發今它出然作，原科也我能孩打吸自次：一目子明，數復以麼像在水象鄉在這創出覺實友你導……病站從？同觀這量先深分最投上水求子響眼增量家走、自行照排外成？一孩家營能上品！爭解在從是，電音講賽報我，了全市強市念？在越許會黨馬頭？洲工拉節通並布是父益庭就者進戲。速行
-                      card's content.</p>
+                    <h5 class="card-title">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_Name = $result5['TP_Name'];
+                    echo $TP_Name;
+                    ?>
+                    </h5>
+                    <p class="card-text">
+                    <?php include "config.php"?>
+                    <?php 
+                    $TP_TI = $result5['TP_TI'];
+                    echo $TP_TI;
+                    ?>
+                    </p>
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                         收起
@@ -232,9 +294,20 @@ if($_SESSION["name"] == null){
                     <div class="card" style="width: 12rem;">
                       <img class="card-img-top" src="./file/teacherhead/6.jpg" alt="Card image cap">
                       <div class="card-body">
-                        <h5 class="card-title">反町老師</h5>
-                        <p class="card-text">孩要作底去見德高員，生布立千結與是三了人我？確水最部了因樂能物，年發價：上下風，進神可！待全件天空；個告車的活活影新朋據作覺直角、公萬絕死，究讀過質夫性！有樓何部內的多建運全。發今它出然作，原科也我能孩打吸自次：一目子明，數復以麼像在水象鄉在這創出覺實友你導……病站從？同觀這量先深分最投上水求子響眼增量家走、自行照排外成？一孩家營能上品！爭解在從是，電音講賽報我，了全市強市念？在越許會黨馬頭？洲工拉節通並布是父益庭就者進戲。速行
-                          card's content.</p>
+                        <h5 class="card-title">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_Name = $result6['TP_Name'];
+                        echo $TP_Name;
+                        ?>
+                        </h5>
+                        <p class="card-text">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_TI = $result6['TP_TI'];
+                        echo $TP_TI;
+                        ?>
+                        </p>
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                             收起
@@ -247,10 +320,20 @@ if($_SESSION["name"] == null){
                     <div class="card" style="width: 12rem;">
                       <img class="card-img-top" src="./file/teacherhead/7.jpg" alt="Card image cap">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                          the
-                          card's content.</p>
+                        <h5 class="card-title">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_Name = $result7['TP_Name'];
+                        echo $TP_Name;
+                        ?>
+                        </h5>
+                        <p class="card-text">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_TI = $result7['TP_TI'];
+                        echo $TP_TI;
+                        ?>
+                        </p>
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                             收起
@@ -263,10 +346,20 @@ if($_SESSION["name"] == null){
                     <div class="card" style="width: 12rem;">
                       <img class="card-img-top" src="./file/teacherhead/8.jpg" alt="Card image cap">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                          the
-                          card's content.</p>
+                        <h5 class="card-title">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_Name = $result8['TP_Name'];
+                        echo $TP_Name;
+                        ?>
+                        </h5>
+                        <p class="card-text">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_TI = $result8['TP_TI'];
+                        echo $TP_TI;
+                        ?>
+                        </p>
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                             收起
@@ -279,10 +372,20 @@ if($_SESSION["name"] == null){
                     <div class="card" style="width: 12rem;">
                       <img class="card-img-top" src="./file/teacherhead/9.jpg" alt="Card image cap">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                          the
-                          card's content.</p>
+                        <h5 class="card-title">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_Name = $result9['TP_Name'];
+                        echo $TP_Name;
+                        ?>
+                        </h5>
+                        <p class="card-text">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_TI = $result9['TP_TI'];
+                        echo $TP_TI;
+                        ?>
+                        </p>
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                             收起
@@ -295,10 +398,20 @@ if($_SESSION["name"] == null){
                     <div class="card" style="width: 12rem;">
                       <img class="card-img-top" src="./file/teacherhead/10.jpg" alt="Card image cap">
                       <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                          the
-                          card's content.</p>
+                        <h5 class="card-title">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_Name = $result10['TP_Name'];
+                        echo $TP_Name;
+                        ?>
+                        </h5>
+                        <p class="card-text">
+                        <?php include "config.php"?>
+                        <?php 
+                        $TP_TI = $result10['TP_TI'];
+                        echo $TP_TI;
+                        ?>
+                        </p>
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
                             收起
@@ -388,7 +501,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '1'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T1'];
+              echo $result['BB_B1'];
             ?>
         </div>
         <div class="date1">
@@ -397,7 +510,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '1'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T2'];
+              echo $result['BB_B2'];
             ?>
         </div>
         <div class="date1">
@@ -406,7 +519,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '1'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T3'];
+              echo $result['BB_B3'];
             ?>
         </div>
         <div class="date1">
@@ -415,7 +528,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '1'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T4'];
+              echo $result['BB_B4'];
             ?>
         </div>
         <div class="date1">
@@ -424,7 +537,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '1'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T5'];
+              echo $result['BB_B5'];
             ?>
         </div>
       </div>
@@ -435,7 +548,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '2'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T1'];
+              echo $result['BB_B1'];
             ?>
         </div>
         <div class="date1">
@@ -444,7 +557,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '2'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T2'];
+              echo $result['BB_B2'];
             ?>
         </div>
         <div class="date1">
@@ -453,7 +566,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '2'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T3'];
+              echo $result['BB_B3'];
             ?>
         </div>
         <div class="date1">
@@ -462,7 +575,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '2'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T4'];
+              echo $result['BB_B4'];
             ?>
         </div>
         <div class="date1">
@@ -471,7 +584,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '2'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T5'];
+              echo $result['BB_B5'];
             ?>
         </div>
       </div>
@@ -482,7 +595,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '3'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T1'];
+              echo $result['BB_B1'];
             ?>
         </div>
         <div class="date1">
@@ -491,7 +604,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '3'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T2'];
+              echo $result['BB_B2'];
             ?>
         </div>
         <div class="date1">
@@ -500,7 +613,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '3'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T3'];
+              echo $result['BB_B3'];
             ?>
         </div>
         <div class="date1">
@@ -509,7 +622,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '3'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T4'];
+              echo $result['BB_B4'];
             ?>
         </div>
         <div class="date1">
@@ -518,7 +631,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '3'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T5'];
+              echo $result['BB_B5'];
             ?>
         </div>
       </div>
@@ -529,7 +642,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '4'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T1'];
+              echo $result['BB_B1'];
             ?>
         </div>
         <div class="date1">
@@ -538,7 +651,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '4'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T2'];
+              echo $result['BB_B2'];
             ?>!
         </div>
         <div class="date1">
@@ -547,7 +660,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '4'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T3'];
+              echo $result['BB_B3'];
             ?>
         </div>
         <div class="date1">
@@ -556,7 +669,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '4'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T4'];
+              echo $result['BB_B4'];
             ?>
         </div>
         <div class="date1">
@@ -565,7 +678,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '4'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T5'];
+              echo $result['BB_B5'];
             ?>
         </div>
       </div>
@@ -576,7 +689,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '5'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T1'];
+              echo $result['BB_B1'];
             ?>
         </div>
         <div class="date1">
@@ -585,7 +698,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '5'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T2'];
+              echo $result['BB_B2'];
             ?>
         </div>
         <div class="date1">
@@ -594,7 +707,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '5'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T3'];
+              echo $result['BB_B3'];
             ?>
         </div>
         <div class="date1">
@@ -603,7 +716,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '5'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T4'];
+              echo $result['BB_B4'];
             ?>
         </div>
         <div class="date1">
@@ -612,7 +725,7 @@ if($_SESSION["name"] == null){
               $sql = "select * from BulletinBoard where BB_Id = '5'";
               $rows = mysqli_query($bd, $sql);
               $result = mysqli_fetch_assoc($rows);
-              echo $result['BB_T5'];
+              echo $result['BB_B5'];
             ?>
         </div>
       </div>

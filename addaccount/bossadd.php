@@ -71,7 +71,7 @@ session_start();
     <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
     <!-- <input id="fileToUpload" style="display:block;" type="file" name="fileToUpload"> -->
 
-    <input id="fileToUpload" placeholder="Head shot" readonly style="border-radius:10px;">
+    <input id="fileToUpload" name="fileToUpload" placeholder="Head shot" readonly style="border-radius:10px;">
     <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
         <span>Choose File</span>
         <input id="uploadBtn" type="file" class="upload" name="uploadBtn">
@@ -91,12 +91,17 @@ session_start();
     <!-- <label for="fileToUpload2">Company Logo</label> -->
     <!-- <label class="btn btn-info" style="background: rgba(170, 175, 175, 0.7);border:2px #ccc;border-radius:10px;font-size:24px;"> -->
     <!-- <input id="fileToUpload2" style="display:none;" type="file" name="fileToUpload2"> -->
-    <input id="fileToUpload2" placeholder="Company Logo" readonly style="border-radius:10px;">
+    <input id="fileToUpload2" name="fileToUpload2" placeholder="Company Logo" readonly style="border-radius:10px;">
     <div class="fileUpload btn btn-info" style="background: rgba(170, 175, 175, 0.4);border:2px #ccc;border-radius:10px;font-size:24px;">
         <span>Choose File</span>
         <input id="uploadBtn1" type="file" class="upload" name="uploadBtn1">
     </div>
     </label>
+  </div>
+  <div class="cen" >
+      <div class="submitBtn">
+        <button id="btn" type="submit" class="btn btn-default cen" style="font-family: 'Hi Melody', cursive;background: rgba(170, 175, 175, 0.4);width:300px;font-size:32px;color:white;">Submit</button>
+      </div>
   </div>
   
 </form>

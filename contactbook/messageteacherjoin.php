@@ -142,24 +142,22 @@ if (!$bd) {
 // --------------------------------------------------------
 // --------------------------------------------------------
 
-$sql = "select SC_CI from StudentClass where SC_CN = '$SC_CN'";
-$rows = mysqli_query($bd, $sql);
-$result = mysqli_fetch_assoc($rows);
-$SC_CI = $result['SC_CI'];
+// $sql = "select SC_CI from StudentClass where SC_CN = '$SC_CN'";
+// $rows = mysqli_query($bd, $sql);
+// $result = mysqli_fetch_assoc($rows);
+// $SC_CI = $result['SC_CI'];
 
-$sql1 = "SELECT UA_VC FROM UserAccount WHERE UA_Phone = (SELECT S_Phone FROM Student WHERE S_Name = '$SC_SN')";
+$sql1 = "SELECT * FROM UserAccount WHERE UA_Phone = (SELECT S_Phone FROM Student WHERE S_Name = '$SC_SN')";
 $rows1 = mysqli_query($bd, $sql1);
 $result1 = mysqli_fetch_assoc($rows1);
 $UA_VC = $result1['UA_VC'];
+$parentName = $result1['UA_Name'];
 // $num1  = mysqli_num_rows($rows1);
 // var_dump($UA_Acu);
-// var_dump($sql1);
+// var_dump($UA_Name);
 // die;
-$sql = "insert into bt1 (mess_CrId, mess_vc, name, news) values ('$SC_CI', '$UA_VC', '$SC_CN', '$news')";
+$sql = "insert into bt1 (mess_CN, mess_SN, mess_OJ, news) values ('$SC_CN', '$parentName', '1', '$news')";
 $rows = mysqli_query($bd, $sql);
-
-    
-
 
 echo "}";
 

@@ -4,6 +4,23 @@ if($_SESSION["name"] == null){
   header("location:../../../login.php"); 
 }
 ?>
+<?php
+
+//The first question:empty_input
+//The second question:password_error
+//The third question:"The_Account_has_been_registered"
+//The fourth question:The_Email_has_been_registered
+$servername = '220.135.97.54:3307';
+$username   = 'root';
+$password   = 'jacky110120';
+$database   = 'team3';
+
+$Registered_success = "false";
+
+// ------------學生--------------
+// ------------學生--------------
+// ------------學生--------------
+?>
 <html>
     <head>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
@@ -82,67 +99,57 @@ if($_SESSION["name"] == null){
       </div>
     </div>
 </nav>
+<table style="border:3px #00BBFF solid;color:white;margin:auto;" cellpadding="10" border='1'>
+
 <?php
 
-//The first question:empty_input
-//The second question:password_error
-//The third question:"The_Account_has_been_registered"
-//The fourth question:The_Email_has_been_registered
-$servername = '220.135.97.54:3307';
-$username   = 'root';
-$password   = 'jacky110120';
-$database   = 'team3';
 
-$Registered_success = "false";
-
-// ------------學生--------------
-// ------------學生--------------
-// ------------學生--------------
-
-
-
-echo "{";
-echo "\"Cr_Name\":";
+// echo "{";
+// echo "\"Cr_Name\":";
 if (isset($_POST["Cr_Name"])) {
     $Cr_Name = $_POST["Cr_Name"];
-    echo $Cr_Name . ",";
+    echo "<tr><td>";
+    // echo $Cr_Name . ",";
 } else {
-    echo "no_Cr_Name" . ",";
+    echo "<tr><td>未選擇班級" . ",";
 }
-echo "\"page\":";
-if (isset($_POST["page"])) {
+// echo "\"page\":";
+if (($_POST["page"] != '0')) {
     $page = $_POST["page"];
-    echo $page . ",";
+    // echo $page . ",";
 } else {
-    echo "no_page" . ",";
+    echo "未選擇分頁" . ",";
 }
-echo "\"option\":";
-if (isset($_POST["option"])) {
+// echo "\"option\":";
+if (($_POST["option"] != '0')) {
     $option = $_POST["option"];
-    echo $option . ",";
+    // echo "</td></tr>";
+    // echo $option . ",";
 } else {
-    echo "no_option" . ",";
+    echo "未選擇則數</td></tr>" . ",";
 }
-echo "\"title\":";
-if (isset($_POST["title"])) {
-    $title = $_POST["title"];
-    echo $title . ",";
-} else {
-    echo "no_title" . ",";
-}
-echo "\"detail\":";
+// echo "\"title\":";
+// if (($_POST["title"] != '')) {
+//     $title = $_POST["title"];
+    // echo $title . ",";
+//     echo "</td></tr>";
+// } else {
+//     echo "未輸入標題</td></tr>" . ",";
+// }
+// echo "\"detail\":";
 if (isset($_POST["detail"])) {
     $detail = $_POST["detail"];
-    echo $detail . ",";
+    // echo $detail . ",";
 } else {
-    echo "no_detail" . ",";
+    // echo "未輸入內容" . ",";
+    // echo "</td>";
 }
 // echo "\"detail\":";
 if (isset($_SESSION["name"])) {
     $UA_Acu = $_SESSION["name"];
-    echo $UA_Acu . ",";
+    // echo $UA_Acu . ",";
 } else {
-    echo "no_UA_Acu" . ",";
+    // echo "no_UA_Acu" . ",";
 }
 
 
@@ -162,34 +169,44 @@ if (!$bd) {
 
 // --------------------------------------------------------
 // --------------------------------------------------------
-
-$sql = "select Cr_Id from Classroom where Cr_Name = '$Cr_Name'";
-$rows = mysqli_query($bd, $sql);
-$result = mysqli_fetch_assoc($rows);
-$Cr_Id = $result['Cr_Id'];
-$sql1 = "SELECT C_Id FROM Company WHERE C_VC = (SELECT UA_CVC FROM UserAccount WHERE UA_Acu = '$UA_Acu')";
-$rows1 = mysqli_query($bd, $sql1);
-$result1 = mysqli_fetch_assoc($rows1);
-$C_Id = $result1['C_Id'];
-// var_dump($UA_Acu);
-// var_dump($C_Id);
-// die;
-if ($page){
-    $sql = "select " . 'BB_T' . $option . " from BulletinBoard where BB_Id = '$page'";
+if(isset($_POST["Cr_Name"])){
+    $sql = "select Cr_Id from Classroom where Cr_Name = '$Cr_Name'";
     $rows = mysqli_query($bd, $sql);
-    $num  = mysqli_num_rows($rows);
-    if ($num == 0){
-        $sql = "insert into BulletinBoard (BB_Id, BB_Cid, BB_CrId, BB_SN, " . 'BB_T' . $option . ", " . 'BB_B' . $option . ") values ('$page', '$C_Id', '$Cr_Id', '$Cr_Name', '$title', '$detail')";
+    $result = mysqli_fetch_assoc($rows);
+    $Cr_Id = $result['Cr_Id'];
+    $sql1 = "SELECT C_Id FROM Company WHERE C_VC = (SELECT UA_CVC FROM UserAccount WHERE UA_Acu = '$UA_Acu')";
+    $rows1 = mysqli_query($bd, $sql1);
+    $result1 = mysqli_fetch_assoc($rows1);
+    $C_Id = $result1['C_Id'];
+    // var_dump($UA_Acu);
+    // var_dump($C_Id);
+    // die;
+    if ($_POST["page"] != '0'){
+        $sql = "select * from BulletinBoard where BB_Id = '$page'";
         $rows = mysqli_query($bd, $sql);
-    }else{
-        $sql = "UPDATE BulletinBoard SET  BB_Cid = '$C_Id', BB_CrId = '$Cr_Id', BB_SN = '$Cr_Name', " . 'BB_T' . $option . " = '$title', " . 'BB_B' . $option . " = '$detail' where BB_Id = '$page'";
-        $rows = mysqli_query($bd, $sql);
+        $num  = mysqli_num_rows($rows);
+        if ($num == 0){
+            $sql = "insert into BulletinBoard (BB_Id, BB_Cid, BB_CrId, BB_SN, " . 'BB_B' . $option . ") values ('$page', '$C_Id', '$Cr_Id', '$Cr_Name', '$detail')";
+            $rows = mysqli_query($bd, $sql);
+            $url = "../index.php";
+            echo "新增資料完成，3秒後返回首頁</td>";
+            echo "<meta http-equiv=refresh content=3;url=$url>";
+        }else{
+            $sql = "UPDATE BulletinBoard SET  BB_Cid = '$C_Id', BB_CrId = '$Cr_Id', BB_SN = '$Cr_Name', " . 'BB_B' . $option . " = '$detail' where BB_Id = '$page'";
+            $rows = mysqli_query($bd, $sql);
+            $url = "../index.php";
+            echo "更新資料完成，3秒後返回首頁</td>";
+            echo "<meta http-equiv=refresh content=3;url=$url>";
+        }
     }
+
 }
 
 
 
-echo "}";
+// echo "}";
 
 
+?>
+</table>
 

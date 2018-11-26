@@ -1,9 +1,9 @@
 <?php
 session_start();
+// $_POST["SC_CN"] = $_SESSION["SC_CN"];
 if($_SESSION["name"] == null){
-  header("location:login.php"); 
+  header("location:../login.php"); 
 }
-  
 ?>
 <?php
 
@@ -24,20 +24,27 @@ $Registered_success = "false";
 
 
 
-echo "{";
-echo "\"SC_SN\":";
+// echo "{";
+// echo "\"SC_SN\":";
+if (isset($_SESSION["name"])) {
+  $UA_Acu = $_SESSION["name"];
+  // echo $SC_SN . ",";
+} else {
+  echo "no_UA_Acu" . ",";
+}
 if (isset($_POST["SC_SN"])) {
     $SC_SN = $_POST["SC_SN"];
-    echo $SC_SN . ",";
+    // echo $SC_SN . ",";
 } else {
     echo "no_SC_SN" . ",";
 }
-echo "\"SC_CN\":";
+
+// echo "\"SC_CN\":";
 if (isset($_POST["SC_CN"])) {
-    $SC_CN = $_POST["SC_CN"];
-    echo $SC_CN . ",";
+  $SC_CN = $_POST["SC_CN"];
+  // echo $SC_CN . ",";
 } else {
-    echo "no_SC_CN" . ",";
+  echo "no_SC_CN" . ",";
 }
 
 // --------------------------------------------------------
@@ -64,7 +71,7 @@ $CB_SIT = $result['CB_SIT'];
 // die;
 
 
-echo "}";
+// echo "}";
 ?>
 
 <!DOCTYPE html>
@@ -128,6 +135,7 @@ echo "}";
               // echo '<a class="nav-item nav-link navpage" href="#nav-tab">佈告欄</a>';
               // echo '<a class="nav-item nav-link navpage" href="../contactbook/contactbook.php">聯絡簿</a>';
               echo '<a class="nav-item nav-link navpage" href="../transcript/transcript.php">成績單</a>';
+              echo '<a class="nav-item nav-link navpage" href="./addaccount/parentPw.php">密碼修改</a>';
               // echo '<a class="nav-item nav-link navpage" href="#context us">聯絡我們</a>';
             }
           }
@@ -165,6 +173,7 @@ echo "}";
               <div class="item">
                 <div class="data1">
                   <h2>今日作業</h2>
+
                   <?php
                   
                       echo $CB_CIT;
@@ -201,31 +210,20 @@ echo "}";
           <div class="card-body">
             <div class="flexbox">
               <div class="item">
-                <?php include '../config.php';?>
-                <?php
-                $servername = '220.135.97.54:3307';
-                $username = 'root';
-                $password = 'jacky110120';
-                $database = 'team3';
-
-                $Registered_success = "false";
-
+              <?php
+                
                 error_reporting(0);
-                $name = $_POST[bname];
+                $SC_CN = $_POST[SC_CN];
+                $SC_SN = $_POST[SC_SN];
+                $UA_Name = $_POST[UA_Name];
                 $news = $_POST[bnews];
 
                 $bd = mysqli_connect($servername, $username, $password, $database);
-                $sql = "select UA_VC from UserAccount where UA_Name = '$result[UA_Name]'";
+                $sql = "insert into bt1(no,mess_CN,mess_SN,mess_OJ,news)values(null,'$SC_CN','$UA_Name','2','$news')";
                 $rows = mysqli_query($bd, $sql);
-                $result = mysqli_fetch_assoc($rows);
-                $UA_VC = $result['UA_VC'];
-                $sql1 = "insert into bt1(no,mess_vc,name,news)values(null,'$UA_VC','$name','$news')";
-                $rows1 = mysqli_query($bd, $sql1);
                 include "b_index.php";
                 ?>
-
-
-              </div>
+            </div>
             </div>
           </div>
         </div>

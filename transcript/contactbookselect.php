@@ -4,7 +4,7 @@
 //     require_once getcwd() . '/vendor/autoload.php';
 // }
 require __DIR__.'/../vendor/autoload.php';
-session_start();
+// session_start();
 
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Events\Dispatcher;
@@ -38,3 +38,4 @@ $user = DB::table('UserAccount')->where('UA_Acu', $_SESSION["name"])->pluck('UA_
 // $studentClass = DB::table('Student')->whereIn('phone', $parents->pluck('phone')->toArray())->get();
 $student = DB::table('Student')->where('S_Phone',$user)->pluck('S_Name');
 $studentClass = DB::table('StudentClass')->where('SC_SN',$student)->get();
+

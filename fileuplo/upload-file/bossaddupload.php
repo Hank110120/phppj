@@ -62,7 +62,8 @@ $logoFile1 = $logoDir . basename('logo.jpg');
 
 // $teacherFile = $teacherHeadDir . basename($_FILES["uploadBtn2"]["name"]);
 // $teacherFile1 = $teacherHeadDir . basename('logo.jpg');
-
+// var_dump($_FILES["uploadBtn"]);
+// die;
 
 $uploadOk = 1;
 
@@ -83,74 +84,81 @@ $logoType = strtolower(pathinfo($logoFile, PATHINFO_EXTENSION));
 //     $uploadOk = 0;
 // }
 // // Check file size
-if ($_FILES["uploadBtn"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-
-if ($_FILES["uploadBtn1"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk1 = 0;
-}
-
-// if ($_FILES["uploadBtn2"]["size"] > 5000000) {
-//     echo "Sorry, your file is too large.";
-//     $uploadOk2 = 0;
-// }
-
-// // Allow certain file formats
-if ($bossType != 'jpg' && $bossType != 'png') {
-    echo "Sorry, only jpg & png files are allowed.";
-    $uploadOk = 0;
-}
-if ($logoType != 'jpg' && $logoType != 'png'){
-    echo "Sorry, only jpg & png files are allowed.";
-    $uploadOk1 = 0;
-}
-// if ($teacherType != 'jpg' && $teacherType != 'png'){
-//     echo "Sorry, only jpg & png files are allowed.";
-//     $uploadOk2 = 0;
-// }
-
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["uploadBtn"]["tmp_name"], $bossFile1)) {
-        echo "The file ". basename($_FILES["uploadBtn"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
+?>
+<table style="border:3px #00BBFF solid;color:white;margin:auto;" cellpadding="10" border='1'>
+<?php
+      echo "<td>";
+      if ($_FILES["uploadBtn"]["size"] > 5000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
     }
-}
-
-if ($uploadOk1 == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["uploadBtn1"]["tmp_name"], $logoFile1)) {
-        echo "The file ". basename($_FILES["uploadBtn1"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
+    
+    if ($_FILES["uploadBtn1"]["size"] > 5000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk1 = 0;
     }
-}
-
-// if ($uploadOk2 == 0) {
-//     echo "Sorry, your file was not uploaded.";
-// // if everything is ok, try to upload file
-// } else {
-//     if (move_uploaded_file($_FILES["uploadBtn2"]["tmp_name"], $teacherFile)) {
-//         echo "The file ". basename($_FILES["uploadBtn2"]["name"]). " has been uploaded.";
-//     } else {
-//         echo "Sorry, there was an error uploading your file.";
-//     }
-// }
-
-
-// include '../read-file/index.php';
-// // -------------- read file ------------------
-// $csv = Reader::createFromPath($targetFile, 'r');
-// $csv->setHeaderOffset(0);
-
-// $header = $csv->getHeader(); //returns the CSV header record
-// $records = $csv->getRecords(); //returns all the CSV records as an Iterator object
+    
+    // if ($_FILES["uploadBtn2"]["size"] > 5000000) {
+    //     echo "Sorry, your file is too large.";
+    //     $uploadOk2 = 0;
+    // }
+    
+    // // Allow certain file formats
+    if ($bossType != 'jpg' && $bossType != 'png') {
+        echo "只接受附檔名為jpg或png的老闆圖片.";
+        $uploadOk = 0;
+    }
+    if ($logoType != 'jpg' && $logoType != 'png'){
+        echo "只接受附檔名為jpg或png的LOGO圖片.";
+        $uploadOk1 = 0;
+    }
+    // if ($teacherType != 'jpg' && $teacherType != 'png'){
+    //     echo "Sorry, only jpg & png files are allowed.";
+    //     $uploadOk2 = 0;
+    // }
+    
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "圖檔無法上傳.";
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["uploadBtn"]["tmp_name"], $bossFile1)) {
+            echo "The file ". basename($_FILES["uploadBtn"]["name"]). " has been uploaded.";
+        } else {
+            echo "老闆圖片上傳異常.";
+        }
+    }
+    
+    if ($uploadOk1 == 0) {
+        echo "圖檔無法上傳.";
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["uploadBtn1"]["tmp_name"], $logoFile1)) {
+            echo "The file ". basename($_FILES["uploadBtn1"]["name"]). " has been uploaded.";
+        } else {
+            echo "公司LOGO圖片上傳異常.";
+        }
+    }
+    
+    // if ($uploadOk2 == 0) {
+    //     echo "Sorry, your file was not uploaded.";
+    // // if everything is ok, try to upload file
+    // } else {
+    //     if (move_uploaded_file($_FILES["uploadBtn2"]["tmp_name"], $teacherFile)) {
+    //         echo "The file ". basename($_FILES["uploadBtn2"]["name"]). " has been uploaded.";
+    //     } else {
+    //         echo "Sorry, there was an error uploading your file.";
+    //     }
+    // }
+    
+    
+    // include '../read-file/index.php';
+    // // -------------- read file ------------------
+    // $csv = Reader::createFromPath($targetFile, 'r');
+    // $csv->setHeaderOffset(0);
+    
+    // $header = $csv->getHeader(); //returns the CSV header record
+    // $records = $csv->getRecords(); //returns all the CSV records as an Iterator object
+  
+?>
+</table>
